@@ -66,22 +66,22 @@
                             <div class="d-flex mb-2">
                                 <h5 class="card-title flex-grow-1">Formulaire de création de nouvel étudiant</h5>
                             </div>
-                            <form class="row g-3">
+                            <form class="row g-3" @submit.prevent="submitStudent">
                                 <div class="col-6">
                                   <label for="inputName" class="form-label">Nom(s)</label>
-                                  <input required type="text" class="form-control" id="inputName">
+                                  <input v-model="newStudent.nom" required type="text" class="form-control" id="inputName">
                                 </div>
                                 <div class="col-6">
                                   <label for="inputFirstname" class="form-label">Prénom(s)</label>
-                                  <input required type="text" class="form-control" id="inputFirstname">
+                                  <input v-model="newStudent.prenom" required type="text" class="form-control" id="inputFirstname">
                                 </div>
                                 <div class="col-6">
                                   <label for="inputDatenaissance" class="form-label">Date de naissance</label>
-                                  <input required type="date" class="form-control" id="inputDatenaissance">
+                                  <input v-model="newStudent.dateNaissance" required type="date" class="form-control" id="inputDatenaissance">
                                 </div>
                                 <div class="col-6">
                                   <label for="selectNiveauScolaire" class="form-label">Niveau scolaire</label>
-                                  <select required id="selectNiveauScolaire" class="form-select">
+                                  <select v-model="newStudent.niveauScolaire" required id="selectNiveauScolaire" class="form-select">
                                       <option value=""></option>
                                       <option value="Terminal A">Terminal A</option>
                                       <option value="Terminal D">Terminal D</option>
@@ -146,7 +146,11 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.4/sweetalert2.all.js" integrity="sha512-aYkxNMS1BrFK2pwC53ea1bO8key+6qLChadZfRk8FtHt36OBqoKX8cnkcYWLs1BR5sqgjU5SMIMYNa85lZWzAw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <script src="https://unpkg.com/vue@next"></script>
+
+    <script src="js/api.js"></script>
 
     <script src="js/app.js"></script>
 
